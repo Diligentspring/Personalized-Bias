@@ -20,7 +20,6 @@ from ultra.learning_algorithm.dla_pbm import DLA_PBM
 from ultra.learning_algorithm.prs_rank import PRSrank_modify
 from ultra.learning_algorithm.navie_algorithm_softmax import NavieAlgorithm_softmax
 from ultra.learning_algorithm.user_pbm_click_model import User_PBM_Click_Model
-from ultra.learning_algorithm.vectorization_pytorch import Vectorization
 
 # rank list size should be read from data
 parser = argparse.ArgumentParser(description='Pipeline commandline argument')
@@ -168,8 +167,6 @@ def train(exp_settings):
         model = DLA_PBM(train_set, exp_settings)
     elif ULTR_model == 'User_PBM_Click_Model':
         model = User_PBM_Click_Model(train_set, exp_settings)
-    elif ULTR_model == 'Vectorization':
-        model = Vectorization(train_set, exp_settings)
     elif ULTR_model == 'PRS':
         model = PRSrank_modify(train_set, exp_settings)
 
