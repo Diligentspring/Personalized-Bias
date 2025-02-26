@@ -37,9 +37,9 @@ To train an MLP ranking model with the relevance labels estimated by our user-aw
 python main.py --data_dir [DATASET_PATH] --train_dataset train --train_data_prefix user_aware --model_dir [SAVE_MODEL_PATH] --setting_file ./example_settings/naive_exp_settings.json
 ```
 
-To directly train a ULTR model like DLA using clicks:
+To directly train a ULTR model like PRS using clicks:
 ```
-python main_click.py --ULTR_model DLA --data_dir [DATASET_PATH] --train_dataset train_click --train_data_prefix train --model_dir [SAVE_MODEL_PATH] --setting_file ./example_settings/naive_exp_settings.json
+python main_click.py --ULTR_model PRS --data_dir [DATASET_PATH] --train_dataset train_click --train_data_prefix train --model_dir [SAVE_MODEL_PATH] --setting_file ./example_settings/naive_exp_settings.json
 ```
 To evaluate a ULTR method (with an MLP ranking model):
 ```
