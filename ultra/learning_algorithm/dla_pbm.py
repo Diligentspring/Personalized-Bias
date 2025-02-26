@@ -20,7 +20,7 @@ import ultra.utils
 import torch.autograd
 
 def sigmoid_prob(logits):
-    return torch.sigmoid(logits - torch.mean(logits, -1, keepdim=True))
+    return torch.sigmoid(logits)
 
 class DenoisingNet(nn.Module):
     def __init__(self, input_vec_size):
@@ -81,7 +81,7 @@ class DLA_PBM(BaseAlgorithm):
             max_gradient_norm=5.0,            # Clip gradients to this norm.
             loss_func='softmax_loss',            # Select Loss function
             # the function used to convert logits to probability distributions
-            logits_to_prob='softmax',
+            logits_to_prob='sigmoid',
             # The learning rate for ranker (-1 means same with learning_rate).
             propensity_learning_rate=-1,
             ranker_loss_weight=1.0,            # Set the weight of unbiased ranking loss
